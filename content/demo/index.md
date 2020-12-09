@@ -2,6 +2,7 @@
 title="demo"
 description="a basic demo of zola."
 date=2019-08-06
+draft = true
 
 [taxonomies]
 tags = ["demo", "zola", "highlighting"]
