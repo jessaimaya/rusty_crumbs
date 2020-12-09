@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://jessai.dev"
+base_url = "/"
 
 title = "Rusty Crumbs | My learning path"
 description = "This is my learning path in which I'll dropping some knowledge breads I'm acquiring in this journey."
