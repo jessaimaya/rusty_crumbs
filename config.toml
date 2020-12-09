@@ -1,0 +1,59 @@
+# The URL the site will be built for
+base_url = "https://jessai.dev"
+
+title = "Rusty Crumbs | My learning path"
+description = "This is my learning path in which I'll dropping some knowledge breads I'm acquiring in this journey."
+default_language = "en"
+generate_feed = true
+feed_filename = "rss.xml"
+compile_sass = true
+highlight_code = true
+
+# https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting
+highlight_theme = "nord" # Other dark themes that work: "1337", "agola-dark",
+build_search_index = true
+
+# Built in taxonomies of zerm.
+taxonomies = [
+    {name = "tags"},
+    {name = "categories"},
+]
+
+[extra]
+author = "Jessaí"
+show_author = false
+show_categories = true
+show_tags = true
+# ["orange", "blue", "red", "green", "pink"]
+theme_color = "blue"
+show_menu_items = 2
+# set theme to full screen width.
+full_width = false
+center = true
+# set a custom favicon. Must be placed in root of static/ directory...
+# favicon = ""
+
+
+# Set a custom preview image for your website when posted as a link.
+# Must be placed in root of static/ directory...
+# og_preview_img = ""
+
+# Copyright notice if desired. Defaults to
+# copyright = "copyright notice here"
+
+# What is displayed in the top left corner of the website. Default is zerm.
+logo_text = "Rusty Crumbs"
+
+# Link in logo. Default returns you to $BASE_URL.
+logo_home_link = "/"
+
+# Menu items to display. You define a url and the name of the menu item.
+# NOTE: `$BASE_URL/` must be included in the url name.
+main_menu = [
+    {url="/about/", name="about"},
+    {url="/contact/", name="contact"},
+]
+menu_more = "show more"
+read_more = "read more"
+read_other_posts = "read other posts"
+
