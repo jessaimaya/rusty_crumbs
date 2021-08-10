@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Rusty Crumbs | My learning path</title>
+        <link>/rusty_crumbs</link>
+        <description>This is my learning path in which I&#x27;ll dropping some knowledge breads I&#x27;m acquiring in this journey.</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="/rusty_crumbs/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Rust Standard Library Modules</title>
+            <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+            <link>/rusty_crumbs/std-modules/</link>
+            <guid>/rusty_crumbs/std-modules/</guid>
+            <description>&lt;p&gt;A quick diagram representing modules on &lt;code&gt;std::&lt;&#x2F;code&gt;
+We can group them in: &lt;code&gt;SysCalls  Oriented&lt;&#x2F;code&gt; &amp;amp; &lt;code&gt;Computation Oriented&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;syscalls-oriented&quot;&gt;Syscalls-Oriented&lt;a class=&quot;zola-anchor&quot; href=&quot;#syscalls-oriented&quot; aria-label=&quot;Anchor link for: syscalls-oriented&quot;&gt;§&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Modules that manage system hardware resources. (kernel required for privileged ops)&lt;&#x2F;p&gt;
+&lt;div class=&quot;mermaid&quot;&gt;
+ classDiagram
+    class Concurrency{
+        env
+        sync
+        process
+        thread
+    }
+    class Networking {
+        net
+    }
+    class IO {
+        IO
+    }
+    class OS Specific {
+        OS
+    }
+    class Time Related {
+        time
+    }
+    class Async {
+        future
+        task
+    }
+    class FileSystem {
+        fs
+        path
+    }
+    class MemoryManagement {
+        alloc
+        convert
+        ptr
+        borrow
+        default
+        rc
+        cell
+        mem
+        clone
+        pin
+    }
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;computation-oriented&quot;&gt;Computation-Oriented&lt;a class=&quot;zola-anchor&quot; href=&quot;#computation-oriented&quot; aria-label=&quot;Anchor link for: computation-oriented&quot;&gt;§&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Data representation, computation and instructions to the compiler.&lt;&#x2F;p&gt;
+&lt;div class=&quot;mermaid&quot;&gt;
+ classDiagram
+    class DataProcessing {
+        ascii
+        fmt
+        num
+        cmp
+        hash
+        ops
+        iter
+    }
+    class ErrorHandling {
+        error
+        panic
+        option
+        result
+    }
+    class Compiler {
+        hint
+        primitive
+        prelude
+    }
+    class ffi {
+        ffi
+    }
+    class DataTypes {
+        any
+        f32
+        marker
+        string
+        array
+        f64
+        slice
+        str
+        vec
+        char
+        i8..isize
+        u8...usize
+        collections
+    }
+&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;a class=&quot;zola-anchor&quot; href=&quot;#notes&quot; aria-label=&quot;Anchor link for: notes&quot;&gt;§&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;For the tricky ones:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cell:&lt;&#x2F;strong&gt; Memory safety is based on the rule that a value can have either several immutable references to it a single mutable reference. On scenarios where a shared mutable reference is required.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Clone:&lt;&#x2F;strong&gt; primitive types such as integers are &lt;em&gt;copyable&lt;&#x2F;em&gt;. Not all types can be copied, because they may require memory allocation; example: &lt;code&gt;String&lt;&#x2F;code&gt; or &lt;code&gt;Vec&lt;&#x2F;code&gt; types memory are allocated in the heap, rather than the stack. In such cases, a &lt;code&gt;clone()&lt;&#x2F;code&gt; method is used to duplicate a value.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Convert:&lt;&#x2F;strong&gt; conversion between data types
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AsRef:&lt;&#x2F;strong&gt; by implementing this trait we can write a function that takes a parameter of type &lt;code&gt;AsRef&amp;lt;str&amp;gt;&lt;&#x2F;code&gt;, which means that this function can accept any reference that can be converted into a string reference &lt;code&gt;(&amp;amp;str)&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Pin:&lt;&#x2F;strong&gt; types in rust are &lt;em&gt;movable&lt;&#x2F;em&gt; by default. For example &lt;code&gt;Vec&lt;&#x2F;code&gt; type, a &lt;code&gt;pop()&lt;&#x2F;code&gt; operation moves a value out and a push operation may result in the reallocation of memory. However, there are situations where it is useful to have objects with fixed (&lt;em&gt;pinned&lt;&#x2F;em&gt;) memory locations (&lt;em&gt;linked-lists&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;ptr:&lt;&#x2F;strong&gt; Rust support two types of raw pointers
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;*const i32:&lt;&#x2F;strong&gt; immutable&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;*mut i32:&lt;&#x2F;strong&gt; mutable&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;rc:&lt;&#x2F;strong&gt; (&lt;em&gt;reference-counted&lt;&#x2F;em&gt;): single-threaded reference-counting pointers. A reference-counted pointer to an object of type &lt;code&gt;T&lt;&#x2F;code&gt; can be represented as &lt;code&gt;Rc&amp;lt;T&amp;gt;&lt;&#x2F;code&gt;. This provides shared ownership of value &lt;code&gt;T&lt;&#x2F;code&gt;, which is allocated in the heap. If it is cloned, a new pointer to the same memory location in the heap is returned (&lt;em&gt;does not duplicate the value in memory&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;sync:&lt;&#x2F;strong&gt; synchronization of primitives are needed to coordinate operations across threads. Here are primitives such as &lt;code&gt;Arc&lt;&#x2F;code&gt; - &lt;code&gt;Mutex&lt;&#x2F;code&gt; - &lt;code&gt;RwLock&lt;&#x2F;code&gt; - &lt;code&gt;Condvar&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;prelude&#x2F;index.html&quot;&gt;prelude v1&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; items included in every rust program.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;div class=&quot;footnote&quot;&gt;
+    &lt;span class=&quot;highlight&quot;&gt;Source:&lt;&#x2F;span&gt; &lt;a target=&quot;_blank&quot; title=&quot;Practical System Programming for Rust Developers&quot; href=&quot;https:&#x2F;&#x2F;www.amazon.com.mx&#x2F;Practical-System-programming-Rust-developers&#x2F;dp&#x2F;1800560966&quot;&gt;Practical System Programming for Rust Developers&lt;&#x2F;a&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;</description>
+        </item>
+        <item>
+            <title>cargo new</title>
+            <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+            <link>/rusty_crumbs/cargo-new/</link>
+            <guid>/rusty_crumbs/cargo-new/</guid>
+            <description>&lt;p&gt;This is the beginning of my journey to learn Rust. From time to time I&#x27;ll be throwing some crumbs... rusty crumbs.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    cargo new --lib rusty-crumbs
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;There&#x27;s a lot of paths to follow... here are some I&#x27;ll walk for sure:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Webassembly&lt;&#x2F;li&gt;
+&lt;li&gt;Web Development [&lt;em&gt;fullstack&lt;&#x2F;em&gt;]&lt;&#x2F;li&gt;
+&lt;li&gt;Async &#x2F; Networking&lt;&#x2F;li&gt;
+&lt;li&gt;Crypto&lt;&#x2F;li&gt;
+&lt;li&gt;Computer Graphics&lt;&#x2F;li&gt;
+&lt;li&gt;System Programming&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The main goal of this site is to create a future reference for my own, I&#x27;m not very good remembering things.
+I&#x27;m thinking to take what I learn from different sources like: books, courses, tutorials, etc. and create my own examples in order to practice.&lt;&#x2F;p&gt;
+</description>
+        </item>
+    </channel>
+</rss>
