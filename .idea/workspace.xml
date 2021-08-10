@@ -7,13 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5080a74b-e637-4d4f-bbaa-105b2715fa79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/content/cargo_new.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/std_modules.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/FiraCode-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/FiraCode-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/color/blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/color/green.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/color/orange.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/color/pink.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/color/red.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/elasticlunr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/search_index.en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sass/_mermaid.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/about/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/about/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/contact/_index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/fiz/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/color/blue.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/color/blue.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/color/green.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/color/green.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/macros/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macros/footer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +34,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,11 +52,15 @@
     <option name="directoryName" value="3kf3fla1" />
   </component>
   <component name="ProjectId" id="1lQsWbYcHqUYTatqmuiADPpRDCx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
@@ -45,6 +68,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,9 +78,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -70,6 +94,7 @@
       <updated>1607540681883</updated>
       <workItem from="1607540683553" duration="8602000" />
       <workItem from="1628488261911" duration="6727000" />
+      <workItem from="1628605285412" duration="10488000" />
     </task>
     <servers />
   </component>
@@ -87,5 +112,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

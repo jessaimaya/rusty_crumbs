@@ -1,0 +1,24 @@
+
+g.classGroup rect {
+  fill:var(--accent-alpha-20) !important;
+  stroke:var(--accent) !important;
+  stroke-width:1px;
+}
+g.classGroup text {
+  fill: white !important;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+
+  .title {
+    font-weight: bolder;
+  }
+}
+g.classGroup line {
+  stroke: var(--accent)!important;
+  stroke-width: 1;
+}
+
+.classLabel .label {
+  font-size: 14px;
+}

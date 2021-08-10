@@ -11,4 +11,8 @@
 
 {% macro script() %}
     <script type="text/javascript" src="{{ get_url(path="assets/js/main.js" ) }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'});
+    </script>
 {% endmacro script %}
