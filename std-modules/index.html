@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Rust Standard Library Modules - Jessaí</title>
+    
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="This is my learning path in which I&#x27;ll dropping some knowledge breads I&#x27;m acquiring in this journey."/>
+
+    <meta property="og:title" content="
+    Rusty Crumbs | My learning path -&nbsp;Rust Standard Library Modules" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="&#x2F;rusty_crumbs&#x2F;std-modules&#x2F;"/>
+    <meta property="og:description" content="RSL Modules Diagram"/>
+    <link rel="stylesheet" href="&#x2F;rusty_crumbs&#x2F;style.css">
+    <link rel="stylesheet" href="&#x2F;rusty_crumbs&#x2F;color&#x2F;blue.css">
+<link rel="alternate" type="application/rss+xml" title="Rusty Crumbs | My learning path RSS" href="&#x2F;rusty_crumbs&#x2F;rss.xml"></head>
+    <body>
+        <div class="container center">
+<header class="header">
+    <div class="header__inner">
+        <div class="header__logo">
+            <a href="&#x2F;">
+    <div class="logo">
+        Rusty Crumbs
+    </div>
+</a>
+        </div>
+        <div class="menu-trigger">menu</div>
+    </div>
+    
+    <nav class="menu">
+        <ul class="menu__inner menu__inner--desktop">
+            
+            
+                    <li>
+                        <a href="&#x2F;rusty_crumbs&#x2F;about">about</a>
+                    </li>
+                
+                    <li>
+                        <a href="&#x2F;rusty_crumbs&#x2F;random-notes">random_notes</a>
+                    </li>
+                
+            </ul>
+
+        <ul class="menu__inner menu__inner--mobile">
+            
+        <li>
+            <a href="&#x2F;rusty_crumbs&#x2F;about">about</a>
+        </li>
+        <li>
+            <a href="&#x2F;rusty_crumbs&#x2F;random-notes">random_notes</a>
+        </li>
+        </ul>
+    </nav>
+
+    </header>
+<div class="content"><div class="post">
+        <h1 class="post-title">
+            <a href="&#x2F;rusty_crumbs&#x2F;std-modules&#x2F;">Rust Standard Library Modules</a>
+        </h1>
+        
+    <div class="post-meta">
+        <span class="post-date">2021.08.10
+                </span>
+
+        <span class="post-author"></span>
+
+        
+
+    
+    :: {<a href="&#x2F;rusty_crumbs&#x2F;categories&#x2F;no-code&#x2F;">no-code</a>,
+            <a href="&#x2F;rusty_crumbs&#x2F;categories&#x2F;diagrams&#x2F;">diagrams</a>,
+            <a href="&#x2F;rusty_crumbs&#x2F;categories&#x2F;notes&#x2F;">notes</a>} 
+
+            
+    ::
+    #<a href="&#x2F;rusty_crumbs&#x2F;tags&#x2F;rust&#x2F;">rust</a>
+        
+    #<a href="&#x2F;rusty_crumbs&#x2F;tags&#x2F;std&#x2F;">std</a>
+        
+    #<a href="&#x2F;rusty_crumbs&#x2F;tags&#x2F;diagram&#x2F;">diagram</a>
+        
+    #<a href="&#x2F;rusty_crumbs&#x2F;tags&#x2F;no-code&#x2F;">no-code</a>
+        
+    
+            
+        
+    </div>
+
+
+
+        
+
+        <div class="post-content">
+            <p>A quick diagram representing modules on <code>std::</code>
+We can group them in: <code>SysCalls  Oriented</code> &amp; <code>Computation Oriented</code></p>
+<h2 id="syscalls-oriented">Syscalls-Oriented<a class="zola-anchor" href="#syscalls-oriented" aria-label="Anchor link for: syscalls-oriented">§</a>
+</h2>
+<p>Modules that manage system hardware resources. (kernel required for privileged ops)</p>
+<div class="mermaid">
+ classDiagram
+    class Concurrency{
+        env
+        sync
+        process
+        thread
+    }
+    class Networking {
+        net
+    }
+    class IO {
+        IO
+    }
+    class OS Specific {
+        OS
+    }
+    class Time Related {
+        time
+    }
+    class Async {
+        future
+        task
+    }
+    class FileSystem {
+        fs
+        path
+    }
+    class MemoryManagement {
+        alloc
+        convert
+        ptr
+        borrow
+        default
+        rc
+        cell
+        mem
+        clone
+        pin
+    }
+</div>
+<h2 id="computation-oriented">Computation-Oriented<a class="zola-anchor" href="#computation-oriented" aria-label="Anchor link for: computation-oriented">§</a>
+</h2>
+<p>Data representation, computation and instructions to the compiler.</p>
+<div class="mermaid">
+ classDiagram
+    class DataProcessing {
+        ascii
+        fmt
+        num
+        cmp
+        hash
+        ops
+        iter
+    }
+    class ErrorHandling {
+        error
+        panic
+        option
+        result
+    }
+    class Compiler {
+        hint
+        primitive
+        prelude
+    }
+    class ffi {
+        ffi
+    }
+    class DataTypes {
+        any
+        f32
+        marker
+        string
+        array
+        f64
+        slice
+        str
+        vec
+        char
+        i8..isize
+        u8...usize
+        collections
+    }
+</div>
+<h3 id="notes">Notes<a class="zola-anchor" href="#notes" aria-label="Anchor link for: notes">§</a>
+</h3>
+<p>For the tricky ones:</p>
+<ul>
+<li><strong>Cell:</strong> Memory safety is based on the rule that a value can have either several immutable references to it a single mutable reference. On scenarios where a shared mutable reference is required.</li>
+<li><strong>Clone:</strong> primitive types such as integers are <em>copyable</em>. Not all types can be copied, because they may require memory allocation; example: <code>String</code> or <code>Vec</code> types memory are allocated in the heap, rather than the stack. In such cases, a <code>clone()</code> method is used to duplicate a value.</li>
+<li><strong>Convert:</strong> conversion between data types
+<ul>
+<li><strong>AsRef:</strong> by implementing this trait we can write a function that takes a parameter of type <code>AsRef&lt;str&gt;</code>, which means that this function can accept any reference that can be converted into a string reference <code>(&amp;str)</code></li>
+</ul>
+</li>
+<li><strong>Pin:</strong> types in rust are <em>movable</em> by default. For example <code>Vec</code> type, a <code>pop()</code> operation moves a value out and a push operation may result in the reallocation of memory. However, there are situations where it is useful to have objects with fixed (<em>pinned</em>) memory locations (<em>linked-lists</em>).</li>
+<li><strong>ptr:</strong> Rust support two types of raw pointers
+<ul>
+<li><strong>*const i32:</strong> immutable</li>
+<li><strong>*mut i32:</strong> mutable</li>
+</ul>
+</li>
+<li><strong>rc:</strong> (<em>reference-counted</em>): single-threaded reference-counting pointers. A reference-counted pointer to an object of type <code>T</code> can be represented as <code>Rc&lt;T&gt;</code>. This provides shared ownership of value <code>T</code>, which is allocated in the heap. If it is cloned, a new pointer to the same memory location in the heap is returned (<em>does not duplicate the value in memory</em>).</li>
+<li><strong>sync:</strong> synchronization of primitives are needed to coordinate operations across threads. Here are primitives such as <code>Arc</code> - <code>Mutex</code> - <code>RwLock</code> - <code>Condvar</code>.</li>
+<li><strong><a href="https://doc.rust-lang.org/std/prelude/index.html">prelude v1</a></strong> items included in every rust program.</li>
+</ul>
+<div class="footnotes">
+  <div class="footnote">
+    <span class="highlight">Source:</span> <a target="_blank" title="Practical System Programming for Rust Developers" href="https://www.amazon.com.mx/Practical-System-programming-Rust-developers/dp/1800560966">Practical System Programming for Rust Developers</a>
+  </div>
+</div>
+        </div>
+        
+    
+</div></div>
+            
+    <div class="pagination">
+        <div class="pagination__buttons">
+            </div>
+    </div>
+<footer class="footer">
+                    <div class="footer__inner"><div class="copyright">
+            <span>© 2021 <a href="https://jessai.dev" title="Jessaí Maya">Jessaí Maya</a> :: Powered by <a href="https://www.getzola.org/">Zola</a></span>
+            <span>:: Theme made by <a href="https://github.com/ejmg">ejmg</a></span>
+        </div>
+    <script type="text/javascript" src="&#x2F;rusty_crumbs&#x2F;assets&#x2F;js&#x2F;main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'});
+    </script>
+</div>
+                    
+
+                </footer></div>
+    </body>
+</html>
