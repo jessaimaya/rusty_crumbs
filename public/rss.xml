@@ -7,7 +7,18 @@
         <generator>Zola</generator>
         <language>en</language>
         <atom:link href="/rusty_crumbs/rss.xml" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 11 Aug 2021 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Random notes</title>
+            <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+            <link>/rusty_crumbs/random-notes/</link>
+            <guid>/rusty_crumbs/random-notes/</guid>
+            <description>&lt;h2 id=&quot;raii&quot;&gt;RAII&lt;a class=&quot;zola-anchor&quot; href=&quot;#raii&quot; aria-label=&quot;Anchor link for: raii&quot;&gt;§&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;In C++, this pattern of deallocating resources at the end of an item&#x27;s lifetime is sometimes called &lt;code&gt;Resource Acquisition Is Initialization&lt;&#x2F;code&gt;. In Rust we call &lt;code&gt;drop&lt;&#x2F;code&gt; trait.&lt;&#x2F;p&gt;
+&lt;div class=&quot;note-source&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;ch04-01-what-is-ownership.html&quot; title=&quot;What is ownership&quot;&gt;Rust Book | What is Ownership&lt;&#x2F;a&gt;&lt;&#x2F;div&gt;
+</description>
+        </item>
         <item>
             <title>Rust Standard Library Modules</title>
             <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>

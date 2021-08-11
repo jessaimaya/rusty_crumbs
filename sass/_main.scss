@@ -324,7 +324,12 @@ hr {
   font-size: 10px;
   .highlight {
     color: white;
-    padding: 0.5rem 0.2rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem 0.3rem 0.5rem 0.2rem;
     background-color: var(--accent-alpha-50);
   }
+}
+.note-source {
+  font-size: 10px;
+  color: var(--accent);
 }

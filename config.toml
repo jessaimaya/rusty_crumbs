@@ -51,6 +51,7 @@ logo_home_link = "/"
 # NOTE: `$BASE_URL/` must be included in the url name.
 main_menu = [
     {url="/about/", name="about"},
+    {url="/random-notes/", name="random_notes"},
 ]
 menu_more = "show more"
 read_more = "read more"
